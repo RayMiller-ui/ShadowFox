@@ -3,8 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bablu Kumar | Portfolio</title>
+
+    <!-- Fonts: Syne & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
+  
+      <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
 </head>
 
 
@@ -21,6 +35,56 @@
             </nav>
         </div>
     </header>
+
+    <main>
+    <!-- Hero -->
+    <section id="hero" class="section hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">
+            <i class="ri-code-s-slash-line"></i> Creative Developer</p>
+          <h1 class="hero-title">
+            Crafting digital <br />
+            <span class="text-accent">reality.</span>
+          </h1>
+          <p class="hero-subtitle">
+            I build accessible, pixel-perfect, and performant web experiences using modern technologies and motion.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn primary">View Work <i class="ri-arrow-right-line"
+                style="margin-left:8px"></i></a>
+            <a href="#contact" class="btn ghost">Let's Talk</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-orbit">
+            <div class="hero-core card">
+              <p class="pill">Current Focus</p>
+              <h2><i class="ri-flashlight-line" style="color:var(--primary)"></i> Interactive UI</h2>
+              <p style="color:var(--text-muted); font-size:0.9rem">Merging creativity with technical excellence.</p>
+              <div class="hero-stats">
+                <div>
+                  <span class="stat-label">Availability</span>
+                  <span class="stat-value online">Open for work</span>
+                </div>
+                <div>
+                  <span class="stat-label">Location</span>
+                  <span class="stat-value">Remote</span>
+                </div>
+              </div>
+            </div>
+            <div class="hero-orbit-ring hero-orbit-ring--one"></div>
+            <div class="hero-orbit-ring hero-orbit-ring--two"></div>
+          </div>
+          <div class="floating-badge">
+            <i class="ri-magic-line"></i> Premium Design
+          </div>
+        </div>
+      </div>
+    </section>
+
+    </main>
 
     <script src="./script.js"></script>
 </body>

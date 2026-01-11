@@ -70,7 +70,8 @@ body {
 a {
   text-decoration: none;
   color: inherit;
-  /* transition: 0.3s ease; */
+  /* Works with gsap */
+  transition: 0.2s ease;
 }
 
 .header {
@@ -109,12 +110,13 @@ a {
 }
 
 .nav-link{
+    cursor:grabbing;
     font-size: 0.95 rem;
     color: var(--text-muted);
     position: relative;
     /* toDo: make this stuff responsive */
     padding-top: 10px;
-    margin: 3px;
+    margin: 7px;
 }
 
 .nav-link:hover{
