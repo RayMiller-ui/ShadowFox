@@ -1,0 +1,135 @@
+/* Defining theme colors, fonts and layout. */
+
+:root {
+  /* Colors */
+  --bg-dark: #030014;
+  --bg-deep: #0f0a1e;
+  --primary: #a855f7;
+  --secondary: #ec4899;
+  --accent: #22d3ee;
+
+  --text-main: #ffffff;
+  --text-muted: #94a3b8;
+
+  /* Glass */
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-shine: rgba(255, 255, 255, 0.05);
+
+  /* Fonts */
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Outfit', sans-serif;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Layout */
+  --container-width: 1200px;
+  --header-height: 80px;
+}
+
+/* Default stuff. Universal for all of my projects*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* Universal for every container. */
+.container {
+  /* background-color: #ec4899;*/ /*debug*/
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+/* Interesting stuff starts here. */
+
+body {
+  background-color: var(--bg-dark);
+  /* Weird [time wasted 😭]
+  background-image:
+    radial-gradient(circle at 15% 50%, rgba(168, 85, 247, 0.08), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(34, 211, 238, 0.08), transparent 25%);
+  */
+  font-family: var(--font-body);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  /* transition: 0.3s ease; */
+}
+
+.header {
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  background: rgba(3, 0, 20, 0.6);
+}
+
+.nav-container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em; /*that's Something*/
+}
+
+.logo span{
+    color:var(--primary);
+}
+
+.nav{
+    display: flex;
+    gap: 2.5 rem;
+}
+
+.nav-link{
+    font-size: 0.95 rem;
+    color: var(--text-muted);
+    position: relative;
+    /* toDo: make this stuff responsive */
+    padding-top: 10px;
+    margin: 3px;
+}
+
+.nav-link:hover{
+    color: var(--text-main)
+}
+
+.contact {
+  padding: 0.6rem 1.25rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  color: var(--text-main);
+}
+
+.contact:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
