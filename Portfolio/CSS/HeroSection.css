@@ -1,0 +1,102 @@
+/* Hero */
+.section{
+  /* background-color: blue; */
+  padding: 8rem 0;
+  position: relative;
+}
+
+/*[.hero min-width] will prevent the both card to response to screen size*/
+.hero{
+  /* background-color: blue; debug */
+  display: flex;
+  align-items: center;
+  min-width: 110vh;
+  padding-top: var(--header-height);
+}
+
+.hero-grid{
+  /* background-color: pink; debug */
+  display:grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.creative-developer {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  cursor:none;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: 4.5rem;
+  line-height: 1.05;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.03em;
+  cursor: default;
+}
+
+.hero-title .text-accent {
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  color: transparent;
+  -webkit-background-clip: text;
+  
+  /* suggested by one and only GPT */
+  background-clip: text;
+  display: inline-block;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 500px;
+  margin-bottom: 2.5rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  box-shadow: 0 10px 30px -10px var(--primary);
+  border: none;
+}
+
+.btn.primary:hover {
+  box-shadow: 0 20px 40px -15px var(--primary);
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  color: var(--text-main);
+}
+
+.btn.ghost:hover {
+  background: var(--glass-bg);
+  border-color: rgba(255, 255, 255, 0.2);
+}

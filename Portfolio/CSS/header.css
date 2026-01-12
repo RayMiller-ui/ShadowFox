@@ -55,11 +55,11 @@ html{
 
 body {
   background-color: var(--bg-dark);
-  /* Weird [time wasted 😭]
+  /* Weird [time wasted 😭]*/
   background-image:
     radial-gradient(circle at 15% 50%, rgba(168, 85, 247, 0.08), transparent 25%),
     radial-gradient(circle at 85% 30%, rgba(34, 211, 238, 0.08), transparent 25%);
-  */
+  /*Not so weird I guess 🥳*/
   font-family: var(--font-body);
   color: var(--text-main);
   line-height: 1.6;
@@ -110,7 +110,8 @@ a {
 }
 
 .nav-link{
-    cursor:grabbing;
+    /* cursor:grabbing; */
+    cursor:none;
     font-size: 0.95 rem;
     color: var(--text-muted);
     position: relative;
