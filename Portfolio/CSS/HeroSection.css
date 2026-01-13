@@ -119,10 +119,10 @@
 }
 
 .hero-core {
-  background: rgba(15, 10, 30, 0.6);
-  backdrop-filter: blur(20px);
+  background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   padding: 2rem;
   position: absolute;
   top: 50%;
@@ -130,8 +130,22 @@
   transform: translate(-50%, -50%);
   width: 280px;
   z-index: 10;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
+
+.card:hover {
+  border-color: rgba(168, 85, 247, 0.3);
+  background: var(--glass-shine);
+  /*USEFUL LATER FOR EVERY CARD!
+    MAYBE FUTURE ME SHOULD CREATE A GLOBAL.CSS*/
+}
+
+/* .card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+} NOT NEEDED, ATLEAST NOW [hero-core] HANDLED THINGS HERE*/
 
 .pill {
   font-size: 0.7rem;
