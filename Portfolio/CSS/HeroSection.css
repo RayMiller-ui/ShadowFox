@@ -1,16 +1,17 @@
-/* Hero */
+/* Hero Card ONE*/
+
 .section{
-  /* background-color: blue; */
+  /* background-color: blue; debug*/
   padding: 8rem 0;
   position: relative;
 }
 
-/*[.hero min-width] will prevent the both card to response to screen size*/
+/*[.hero min-width] will prevent the both card to response to screen size --> Bullshit*/
 .hero{
   /* background-color: blue; debug */
   display: flex;
   align-items: center;
-  min-width: 110vh;
+  min-height: 100vh;
   padding-top: var(--header-height);
 }
 
@@ -32,7 +33,7 @@
   font-weight: 500;
   color: var(--primary);
   margin-bottom: 1.5rem;
-  cursor:none;
+  cursor: default;
 }
 
 .hero-title {
@@ -99,4 +100,117 @@
 .btn.ghost:hover {
   background: var(--glass-bg);
   border-color: rgba(255, 255, 255, 0.2);
+}
+
+/*Hero card TWO*/
+
+.hero-visual {
+  position: relative;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-orbit {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.hero-core {
+  background: rgba(15, 10, 30, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  z-index: 10;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.pill {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  color: var(--accent);
+}
+
+.hero-core h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.hero-core-para {
+  color:var(--text-muted); 
+  font-size:0.9rem;
+}
+
+.hero-stats {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--glass-border);
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.stat-value {
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.stat-value.online {
+  color: #4ade80;
+}
+
+.hero-orbit-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  /* border: 1px solid rgba(255, 255, 255, 0.05); */
+}
+
+.hero-orbit-ring--one {
+  width: 120%;
+  height: 120%;
+  border: 1px dashed rgba(168, 85, 247, 0.2);
+  animation: spin 30s linear infinite;
+  /*Is this animation even working. */
+}
+
+.hero-orbit-ring--two {
+  width: 160%;
+  height: 160%;
+  border: 1px solid rgba(34, 211, 238, 0.1);
+  animation: spin 45s linear infinite reverse;
+}
+
+.floating-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: var(--bg-deep);
+  border: 1px solid var(--primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  box-shadow: 0 10px 30px -10px var(--primary);
 }

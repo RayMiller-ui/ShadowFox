@@ -74,7 +74,7 @@ a {
   transition: 0.2s ease;
 }
 
-.header {
+header {
   height: var(--header-height);
   position: fixed;
   top: 0;
@@ -106,13 +106,12 @@ a {
 
 .nav{
     display: flex;
-    gap: 2.5 rem;
+    gap: 1.5rem;
 }
 
 .nav-link{
-    /* cursor:grabbing; */
-    cursor:none;
-    font-size: 0.95 rem;
+    cursor: pointer;
+    font-size: 0.95rem;
     color: var(--text-muted);
     position: relative;
     /* toDo: make this stuff responsive */
