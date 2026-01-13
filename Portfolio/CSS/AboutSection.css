@@ -1,0 +1,91 @@
+/* The GRAND IMAGE PART */
+.about-flex {
+  display: flex;
+  gap: 6rem;
+  align-items: center;
+}
+
+.about-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-orbit {
+  position: relative;
+  width: 280px;
+  height: 280px;
+}
+
+.about-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Important android fix */ 
+@media (max-width: 900px) {
+  .about-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* NOW THE OTHER CARDS*/
+.section-title {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-me {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.section-text {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 600px;
+}
+
+.about-content {
+  flex: 1.2;
+}
+
+.about-cards {
+  margin-top: 1.5rem;
+  display: flex;
+  /* flex-direction: column; */
+  gap: 1.5rem;
+}
+
+.about-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-card{
+    border: 0.1rem solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 0.75rem 1.5rem;
+}

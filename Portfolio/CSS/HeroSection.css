@@ -23,6 +23,7 @@
   align-items: center;
 }
 
+/* basic response to the android screen-size  */
 @media (max-width: 900px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -218,7 +219,7 @@
   height: 120%;
   border: 1px dashed rgba(168, 85, 247, 0.2);
   animation: spin 30s linear infinite;
-  /*Is this animation even working. */
+  /*Is this animation even working. --> YUP YUP*/
 }
 
 .hero-orbit-ring--two {
