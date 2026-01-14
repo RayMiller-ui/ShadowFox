@@ -116,23 +116,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* --- Scroll Reveal (Global) --- */
-    // const fadeUpElements = document.querySelectorAll(
-    //   ".section-title, .section-text, .about-card, .project-card, .contact-form, .contact-grid > div"
-    // );
+     const fadeUpElements = document.querySelectorAll(
+       ".section-title, .section-text, .about-card, .project-card, .contact-form, .contact-grid > div"
+     );
   
-    // fadeUpElements.forEach((el) => {
-    //   gsap.from(el, {
-    //     scrollTrigger: {
-    //       trigger: el,
-    //       start: "top 85%",
-    //       toggleActions: "play none none reverse"
-    //     },
-    //     y: 40,
-    //     opacity: 0,
-    //     duration: 0.8,
-    //     ease: "power3.out"
-    //   });
-    // });
+     fadeUpElements.forEach((el) => {
+       gsap.from(el, {
+         scrollTrigger: {
+           trigger: el,
+           start: "top 85%",
+           toggleActions: "play none none reverse"
+         },
+         y: 40,
+         opacity: 0,
+         duration: 0.8,
+         ease: "power3.out"
+       });
+     });
 
 
 });
