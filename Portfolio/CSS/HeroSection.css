@@ -184,8 +184,8 @@
 
 .hero-orbit {
   position: relative;
-  width: min(400px, 80vw);
-  height: min(400px, 80vw);
+  width: min(400px, 45vw);
+  height: min(400px, 45vw);
 }
 
 .hero-core {
