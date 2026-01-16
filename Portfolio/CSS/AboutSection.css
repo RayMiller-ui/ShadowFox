@@ -17,7 +17,7 @@
   height: 280px;
 }
   /*Android 😡*/
-  .about-flex {
+  /* .about-flex {
     background: red;
   }
   .about-visual {
@@ -33,7 +33,7 @@
     position: relative;
     width: min(260px, 70vw);
     height: min(260px, 70vw);
-  }
+  } */
 
 .about-photo {
   width: 100%;
