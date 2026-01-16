@@ -41,6 +41,14 @@
     max-width: fit-content;
   }
 
+  .hero-title {
+    max-width: fit-content;
+  }
+
+  .hero-subtitle {
+    max-width: fit-content;
+  }
+
   /* .hero-orbit {
     width: min(320px, 80vw);
     height: min(320px, 80vw);
