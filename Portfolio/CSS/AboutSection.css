@@ -94,6 +94,10 @@
   margin-bottom: 1.5rem;
 }
 
+.text-accent{
+  color: #22d3ee;
+}
+
 .about-me {
   font-family: var(--font-display);
   font-size: 1rem;
