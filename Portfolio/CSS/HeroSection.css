@@ -37,16 +37,10 @@
     overflow: hidden;
   }
 
-  .hero-text {
-    max-width: 100%;
-  }
-
-  .hero-title {
-    max-width: 100%;
-  }
-
-  .hero-subtitle {
-    max-width: 100vw;
+  .hero-android {
+    max-width: fit-content;
+    overflow: hidden;
+    width: 100%;
   }
 
   /* .hero-orbit {
