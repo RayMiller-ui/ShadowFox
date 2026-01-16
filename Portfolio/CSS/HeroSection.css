@@ -60,7 +60,6 @@
 
   .hero-title {
     font-size: 2rem;
-    word-break: normal;
     overflow-wrap: normal;
     hyphens: none;
     line-height: 1.1;
