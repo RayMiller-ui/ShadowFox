@@ -38,7 +38,7 @@
   }
 
   .hero-text {
-    max-width: fit-content;
+    max-width: max-content;
   }
 
   .hero-title {
