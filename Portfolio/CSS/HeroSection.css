@@ -34,7 +34,7 @@
     margin-top: 4rem;
     min-width: 0;
     max-width: 100%;
-    overflow:-moz-hidden-unscrollable;
+    overflow: hidden;
   }
 
   .hero-android {
@@ -50,10 +50,41 @@
     text-align: center;
   }
 
+  .creative-developer {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.9rem;
+    margin-bottom: 1.2rem;
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .hero-title {
+    font-size: clamp(2.4rem, 7vw, 3.2rem);
+    line-height: 1.1;
+    max-width: 100%;
+    word-break: break-word;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 4.2vw, 1.15rem);
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .hero-actions {
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: 100%;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .hero-actions .btn {
+    padding: 0.85rem 1.6rem;
+    font-size: 0.95rem;
+    white-space: nowrap;
   }
 
   /* .hero-orbit {
