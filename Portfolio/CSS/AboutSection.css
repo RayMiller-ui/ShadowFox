@@ -16,7 +16,16 @@
   width: 280px;
   height: 280px;
 }
-
+  /*Android 😡*/
+  .about-flex {
+    background: red;
+  }
+  .about-visual {
+    background: blue;
+  }
+  .about-orbit {
+    background: green;
+  }
 .about-photo {
   width: 100%;
   height: 100%;
