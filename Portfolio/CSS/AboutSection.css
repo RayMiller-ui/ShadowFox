@@ -63,9 +63,12 @@
 
   .about-cards {
     flex-direction: column;
+    margin: 1rem;
   }
 
   .about-content {
+    display: flex;
+    flex-direction: column;
     width: 110%;
     max-width: 110%;
     text-align: center;
@@ -101,7 +104,7 @@
 .section-text {
   font-size: 1.1rem;
   color: var(--text-muted);
-  max-width: 600px;
+  margin: 1.5rem;
 }
 
 .about-content {

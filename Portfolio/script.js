@@ -135,10 +135,35 @@ document.addEventListener("DOMContentLoaded", () => {
         "-=0.5"
       );
 
+    //Project section
+    const video = document.querySelector(".project-video");
+
+      if (video) {
+        video.addEventListener("loadedmetadata", () => {
+          gsap.registerPlugin(ScrollTrigger);
+        
+          ScrollTrigger.create({
+            trigger: "#featured-project",
+            start: "top 70%",
+            once: true,
+            onEnter: () => {
+              const playPromise = video.play();
+            
+              if (playPromise !== undefined) {
+                playPromise.catch(() => {
+                  // Mobile browser blocked autoplay — do nothing
+                  // Video stays paused as a static preview
+                });
+              }
+            }
+          });
+        });
+      }
+
 
     /* --- Scroll Reveal (Global) --- */
     const fadeUpElements = document.querySelectorAll(
-      ".section-title, .section-text, .about-card, .about-me, .project-card, .contact-form, .contact-grid > div"
+      ".section-title, .section-text, .about-card, .about-me, .fablekins, .project-card, .contact-form, .contact-grid > div"
     );
   
     fadeUpElements.forEach((el) => {
