@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // --- Magnetic Buttons ---
-    const magneticBtns = document.querySelectorAll(".btn, .contact, .nav-link");
+    const magneticBtns = document.querySelectorAll(".btn, .contact, .nav-link, .fablekins");
     magneticBtns.forEach((btn) => {
         btn.addEventListener("mousemove", (e) => {
 
