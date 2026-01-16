@@ -62,7 +62,7 @@
   }
 
   .about-cards {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 
   .about-content {
