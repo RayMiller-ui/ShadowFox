@@ -58,8 +58,8 @@
     white-space: normal;
   }
 
-  .hero-title {
-    font-size: 1rem;
+  .hero-android .hero-title {
+    font-size: clamp(2.5rem, 7vw, 3rem);
     overflow-wrap: normal;
     hyphens: none;
     line-height: 1.1;
