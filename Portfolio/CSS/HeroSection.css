@@ -23,7 +23,6 @@
   align-items: center;
 }
 
-/* basic response to the android screen-size  */
 /* basic response to the android screen-size */
 @media (max-width: 900px) {
   .hero-grid {
@@ -83,12 +82,6 @@
     flex-wrap: wrap;
     gap: 1rem;
   }
-
-
-  /* .hero-orbit {
-    width: min(320px, 80vw);
-    height: min(320px, 80vw);
-  } */
 }
 
 

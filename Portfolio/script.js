@@ -115,6 +115,17 @@ document.addEventListener("DOMContentLoaded", () => {
         "-=0.8"
       )
       .from(
+        ".hero-orbit-Ring",
+        {
+          scale: 0,
+          opacity: 0,
+          duration: 1,
+          stagger: 0.15,
+          ease: "power2.out"
+        },
+        "-=0.8"
+      )
+      .from(
         ".floating-badge",
         {
           y: 20,
