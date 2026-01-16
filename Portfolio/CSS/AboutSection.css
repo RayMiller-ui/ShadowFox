@@ -22,10 +22,19 @@
   }
   .about-visual {
     background: blue;
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
   }
   .about-orbit {
     background: green;
+    position: relative;
+    width: min(260px, 70vw);
+    height: min(260px, 70vw);
   }
+
 .about-photo {
   width: 100%;
   height: 100%;
