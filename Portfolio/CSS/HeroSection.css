@@ -38,6 +38,7 @@
   }
 
   .hero-android {
+    margin-top: 2rem;
     max-width: fit-content;
     overflow: hidden;
     width: 100%;
