@@ -32,9 +32,9 @@
 
   .hero-visual {
     margin-top: 4rem;
-    width: 100%;
-    max-width: fit-content;
-    overflow: hidden;
+    min-width: 0;
+    max-width: 100%;
+    /* overflow: hidden; */
   }
 
   .hero-android {
