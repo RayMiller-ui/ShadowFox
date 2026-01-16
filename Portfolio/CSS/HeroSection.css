@@ -34,13 +34,17 @@
     margin-top: 4rem;
     width: 100%;
     max-width: fit-content;
-    overflow: hidden;   /* 🔑 contains orbit & rings */
+    overflow: hidden;
   }
 
-  .hero-orbit {
+  .hero-text {
+    max-width: fit-content;
+  }
+
+  /* .hero-orbit {
     width: min(320px, 80vw);
     height: min(320px, 80vw);
-  }
+  } */
 }
 
 
