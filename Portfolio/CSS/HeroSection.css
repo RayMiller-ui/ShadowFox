@@ -263,7 +263,7 @@
   color: #4ade80;
 }
 
-.hero-orbit-ring {
+.hero-orbit-ring{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -285,6 +285,42 @@
   height: 160%;
   border: 1px solid rgba(34, 211, 238, 0.1);
   animation: spin 45s linear infinite reverse;
+}
+
+/* Hero section rings */
+.hero-orbit-Ring{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.hero-orbit-Ring--one {
+  width: 120%;
+  height: 120%;
+  border: 1px dashed rgba(168, 85, 247, 0.2);
+  animation: spin 30s linear infinite;
+}
+
+.hero-orbit-Ring--two {
+  width: 160%;
+  height: 160%;
+  border: 1px solid rgba(34, 211, 238, 0.1);
+  animation: spin 45s linear infinite reverse;
+}
+
+/* Removing orbit rings for android */
+.is-android .hero-orbit-Ring{
+  display: none;
+}
+
+.is-android .hero-orbit-Ring--one{
+  display: none;
+}
+
+.is-android .hero-orbit-Ring--two{
+  display: none;
 }
 
 .floating-badge {

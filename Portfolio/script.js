@@ -4,6 +4,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!window.gsap || !window.ScrollTrigger) return;
     gsap.registerPlugin(ScrollTrigger);
 
+    // --- Detecting if the user is on android ---
+    (function detectAndroid() {
+      const isAndroid = /Android/i.test(navigator.userAgent);
+        
+      if (isAndroid) {
+        document.body.classList.add("is-android");
+      }
+    })();
+
+
     // --- Magnetic Buttons ---
     const magneticBtns = document.querySelectorAll(".btn, .contact, .nav-link");
     magneticBtns.forEach((btn) => {
