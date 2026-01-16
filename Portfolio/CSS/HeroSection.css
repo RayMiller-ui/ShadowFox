@@ -33,6 +33,7 @@
   .hero-visual {
     margin-top: 4rem;
     width: 100%;
+    max-width: fit-content;
     overflow: hidden;   /* 🔑 contains orbit & rings */
   }
 
