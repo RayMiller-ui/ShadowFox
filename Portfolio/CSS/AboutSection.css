@@ -56,12 +56,19 @@
 /* Important android fix */ 
 @media (max-width: 900px) {
   .about-flex {
+    align-items: center;
     flex-direction: column;
     text-align: center;
   }
 
   .about-cards {
     grid-template-columns: 1fr;
+  }
+
+  .about-content {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
   }
 }
 
