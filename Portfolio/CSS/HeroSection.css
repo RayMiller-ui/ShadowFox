@@ -24,6 +24,7 @@
 }
 
 /* basic response to the android screen-size  */
+/* basic response to the android screen-size */
 @media (max-width: 900px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -31,8 +32,16 @@
 
   .hero-visual {
     margin-top: 4rem;
+    width: 100%;
+    overflow: hidden;   /* 🔑 contains orbit & rings */
+  }
+
+  .hero-orbit {
+    width: min(320px, 80vw);
+    height: min(320px, 80vw);
   }
 }
+
 
 
 .creative-developer {
