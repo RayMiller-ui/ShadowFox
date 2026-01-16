@@ -59,7 +59,10 @@
   }
 
   .hero-title {
-    font-size: 1rem;
+    font-size: clamp(2.1rem, 6vw, 2.8rem);
+    word-break: normal;
+    overflow-wrap: normal;
+    hyphens: none;
     line-height: 1.1;
     max-width: 100%;
     word-break: break-word;
