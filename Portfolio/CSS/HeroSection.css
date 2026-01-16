@@ -16,7 +16,7 @@
 }
 
 .hero-grid{
-  /* background-color: pink; debug */
+  /* background-color: pink; */
   display:grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 4rem;
@@ -122,10 +122,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* Android */
-  overflow: hidden;
-  max-width: 100%;
 }
 
 .hero-orbit {
@@ -216,9 +212,6 @@
   transform: translate(-50%, -50%);
   border-radius: 50%;
   /* border: 1px solid rgba(255, 255, 255, 0.05); */
-  /* Android */
-  max-width: 100%;
-  max-height: 100%;
 }
 
 .hero-orbit-ring--one {
