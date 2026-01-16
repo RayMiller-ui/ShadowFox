@@ -43,9 +43,9 @@
 html{
     scroll-behavior: smooth;
     /* android fixing */
-    /* width: 100%;
+    width: 100%;
     max-width: 100%;
-    overflow-x: hidden; */
+    overflow-x: hidden;
 }
 
 /* Universal for every container. */
@@ -73,8 +73,8 @@ body {
   -webkit-font-smoothing: antialiased;
 
   /* android fixing */
-  /* width: 100%;
-  max-width: 100%; */
+  width: 100%;
+  max-width: 100%;
 }
 
 a {
