@@ -59,7 +59,7 @@
   }
 
   .hero-title {
-    font-size: clamp(1.8rem, 5.2vw, 2.5rem);
+    font-size: 2rem;
     word-break: normal;
     overflow-wrap: normal;
     hyphens: none;
@@ -70,7 +70,7 @@
   }
 
   .hero-subtitle {
-    font-size: clamp(1rem, 4.2vw, 1.15rem);
+    font-size: clamp(0.75rem, 4.2vw, 1rem);
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
