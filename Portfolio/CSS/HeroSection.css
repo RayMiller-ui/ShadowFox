@@ -59,14 +59,14 @@
   }
 
   .hero-title {
-    font-size: clamp(2.4rem, 7vw, 3.2rem);
+    font-size: 1rem;
     line-height: 1.1;
     max-width: 100%;
     word-break: break-word;
   }
 
   .hero-subtitle {
-    font-size: clamp(2.4rem, 7vw, 3.2rem);
+    font-size: clamp(1rem, 4.2vw, 1.15rem);
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -81,11 +81,6 @@
     gap: 1rem;
   }
 
-  .hero-actions .btn {
-    padding: 0.85rem 1.6rem;
-    font-size: 0.95rem;
-    white-space: nowrap;
-  }
 
   /* .hero-orbit {
     width: min(320px, 80vw);
