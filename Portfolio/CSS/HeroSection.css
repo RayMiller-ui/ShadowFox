@@ -38,10 +38,22 @@
   }
 
   .hero-android {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 2rem;
-    max-width: fit-content;
-    overflow: hidden;
+    margin-bottom: 2rem;
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   /* .hero-orbit {
