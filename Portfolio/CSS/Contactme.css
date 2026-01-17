@@ -84,10 +84,34 @@
 
     .contact-flex .section-title{
         text-align: center;
+        font-size: clamp(2.5rem, 6vw, 3rem);
+        overflow-wrap: normal;
+        hyphens: none;
+        line-height: 1.1;
+        max-width: 100%;
+        word-break: break-word;
+        white-space: normal;
     }
 
     .contact-flex .section-text{
+        font-size: clamp(0.75rem, 4.2vw, 1rem);
         text-align: center;
+        overflow-wrap: normal;
+        hyphens: none;
+        line-height: 1.1;
+        max-width: 100%;
+        word-break: break-word;
+        white-space: normal;
+    }
+
+    .route-links{
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .contact-form {
+        min-width: 0;
+        max-width: 100%;
     }
 
     .route-links .project-link{
