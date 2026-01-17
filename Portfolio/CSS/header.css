@@ -119,6 +119,34 @@ header {
     gap: 1.5rem;
 }
 
+@media (max-width: 900px){
+
+  header {
+    height: 72px;
+  }
+
+  .nav-container .logo {
+    font-size:medium;
+  }
+
+  .nav-container .nav{
+    display: flex;
+    gap: 0;
+
+  }
+
+  .nav-link{
+    display: none;
+  }
+
+  .nav-link.contact{
+    display: inline-flex;
+    margin-left: auto;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem; 
+  }
+}
+
 .nav-link{
     cursor: pointer;
     font-size: 0.95rem;

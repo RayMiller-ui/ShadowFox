@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* --- Scroll Reveal (Global) --- */
     const fadeUpElements = document.querySelectorAll(
-      ".section-title, .section-text, .about-card, .about-me, .fablekins, .project-card, .contact-form, .contact-grid > div"
+      ".section-title, .section-text, .about-card, .about-me, .fablekins, .project-card, .contact-form, .route-links, .contact-grid > div"
     );
   
     fadeUpElements.forEach((el) => {
