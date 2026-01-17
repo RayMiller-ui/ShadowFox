@@ -84,7 +84,7 @@
 
     .contact-flex .section-title{
         text-align: center;
-        font-size: clamp(2.5rem, 5.5vw, 3rem);
+        font-size: clamp(2rem, 6vw, 3rem);
         overflow-wrap: normal;
         hyphens: none;
         line-height: 1.1;
