@@ -1,0 +1,77 @@
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap");
+
+:root {
+  --arsenal-red: #db0007;
+  --arsenal-dark: #0f0f0f;
+  --arsenal-gray: #1a1a1a;
+  --arsenal-white: #ffffff;
+  --arsenal-gold: #9C824A;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--arsenal-dark);
+  color: var(--arsenal-white);
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+p {
+  color: #cccccc;
+}
+
+section {
+  padding: 80px 60px;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 25px;
+  }
+}
+
+/* Navbar Styles */
+.nav-link {
+  color: var(--arsenal-white);
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  position: relative;
+  transition: color 0.3s ease;
+  padding-bottom: 5px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--arsenal-gold);
+  /* Using a gold accent for the hover */
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #f0f0f0;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
