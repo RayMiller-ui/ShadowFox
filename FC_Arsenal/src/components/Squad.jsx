@@ -5,6 +5,7 @@ import { playerStats } from "../data/stats";
 
 export default function Squad() {
   const [selectedPlayerId, setSelectedPlayerId] = useState(squad[0].id);
+  const [viewMode, setViewMode] = useState("featured"); // 'featured' | 'all'
 
   const selectedPlayer = squad.find((p) => p.id === selectedPlayerId);
   const stats = playerStats[selectedPlayerId];
@@ -23,92 +24,151 @@ export default function Squad() {
 
   return (
     <section style={styles.section}>
-      <div style={styles.container}>
-        {/* Left Column: Player Details */}
-        <div style={styles.leftCol}>
-          <div style={styles.header}>
-            <span style={styles.label}>PLAYERS</span>
-            <span style={styles.viewAll}>VIEW ALL</span>
-          </div>
-
-          <div style={styles.playerInfo}>
-            <h1 style={styles.playerName}>
-              {selectedPlayer.name.toUpperCase()}
-              <span style={styles.captainBadge}>C</span>
-            </h1>
-            <span style={styles.positionBadge}>{selectedPlayer.position.toUpperCase()}</span>
-
-            <div style={styles.statsGrid}>
-              <div style={styles.statItem}>
-                <span style={styles.statValue}>{stats?.matches || "-"}</span>
-                <span style={styles.statLabel}>MATCHES</span>
-              </div>
-              <div style={styles.statItem}>
-                <span style={styles.statValue}>{stats?.goals || "0"}</span>
-                <span style={styles.statLabel}>GOALS</span>
-              </div>
-              <div style={styles.statItem}>
-                <span style={styles.statValue}>{stats?.assists || "0"}</span>
-                <span style={styles.statLabel}>ASSISTS</span>
-              </div>
-              <div style={styles.statItem}>
-                <span style={styles.statValue}>{stats?.minutesPlayed || "-"}</span>
-                <span style={styles.statLabel}>MINUTES</span>
-              </div>
+      {viewMode === "featured" ? (
+        <div style={styles.container}>
+          {/* Left Column: Player Details */}
+          <div style={styles.leftCol}>
+            <div style={styles.header}>
+              <span style={styles.label}>PLAYERS</span>
+              <span
+                style={styles.viewAll}
+                onClick={() => setViewMode("all")}
+              >
+                VIEW ALL
+              </span>
             </div>
 
-            <p style={styles.bio}>{stats?.bio || "No biography available."}</p>
+            <div style={styles.playerInfo}>
+              <h1 style={styles.playerName}>
+                {selectedPlayer.name.toUpperCase()}
+                <span style={styles.captainBadge}>C</span>
+              </h1>
+              <span style={styles.positionBadge}>
+                {selectedPlayer.position.toUpperCase()}
+              </span>
 
-            <button style={styles.ctaButton}>VIEW PROFILE</button>
+              <div style={styles.statsGrid}>
+                <div style={styles.statItem}>
+                  <span style={styles.statValue}>{stats?.matches || "-"}</span>
+                  <span style={styles.statLabel}>MATCHES</span>
+                </div>
+                <div style={styles.statItem}>
+                  <span style={styles.statValue}>{stats?.goals || "0"}</span>
+                  <span style={styles.statLabel}>GOALS</span>
+                </div>
+                <div style={styles.statItem}>
+                  <span style={styles.statValue}>{stats?.assists || "0"}</span>
+                  <span style={styles.statLabel}>ASSISTS</span>
+                </div>
+                <div style={styles.statItem}>
+                  <span style={styles.statValue}>
+                    {stats?.minutesPlayed || "-"}
+                  </span>
+                  <span style={styles.statLabel}>MINUTES</span>
+                </div>
+              </div>
+
+              <p style={styles.bio}>{stats?.bio || "No biography available."}</p>
+
+              <button style={styles.ctaButton}>VIEW PROFILE</button>
+            </div>
+          </div>
+
+          {/* Center Column: Player Image */}
+          <div style={styles.centerCol}>
+            <button onClick={handlePrev} style={styles.navButton}>
+              ←
+            </button>
+            <div style={styles.imageWrapper}>
+              <div style={styles.circleBg}></div>
+              <img
+                src={stats?.image || "https://via.placeholder.com/400x600"}
+                alt={selectedPlayer.name}
+                style={styles.playerImage}
+              />
+            </div>
+            <button onClick={handleNext} style={styles.navButton}>
+              →
+            </button>
+          </div>
+
+          {/* Right Column: Player List */}
+          <div style={styles.rightCol}>
+            <div style={styles.listContainer}>
+              {squad.map((player) => (
+                <div
+                  key={player.id}
+                  style={{
+                    ...styles.listItem,
+                    ...(selectedPlayerId === player.id
+                      ? styles.activeListItem
+                      : {}),
+                  }}
+                  onClick={() => setSelectedPlayerId(player.id)}
+                >
+                  <div style={styles.listAvatar}>
+                    <img
+                      src={playerStats[player.id]?.image}
+                      alt={player.name}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        borderRadius: "50%",
+                      }}
+                    />
+                  </div>
+                  <div style={styles.listInfo}>
+                    <span style={styles.listName}>
+                      {player.name.toUpperCase()}
+                    </span>
+                  </div>
+                  {selectedPlayerId === player.id && (
+                    <div style={styles.activeIndicator}></div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-
-        {/* Center Column: Player Image */}
-        <div style={styles.centerCol}>
-          <button onClick={handlePrev} style={styles.navButton}>
-            ←
-          </button>
-          <div style={styles.imageWrapper}>
-            <div style={styles.circleBg}></div>
-            <img
-              src={stats?.image || "https://via.placeholder.com/400x600"}
-              alt={selectedPlayer.name}
-              style={styles.playerImage}
-            />
+      ) : (
+        /* VIEW ALL GRID LAYOUT */
+        <div style={styles.gridContainer}>
+          <div style={styles.gridHeader}>
+            <h2 style={styles.gridTitle}>ALL PLAYERS ({squad.length})</h2>
+            <button onClick={() => setViewMode("featured")} style={styles.backButton}>
+              CLOSE
+            </button>
           </div>
-          <button onClick={handleNext} style={styles.navButton}>
-            →
-          </button>
-        </div>
-
-        {/* Right Column: Player List */}
-        <div style={styles.rightCol}>
-          <div style={styles.listContainer}>
+          <div style={styles.gridView}>
             {squad.map((player) => (
-              <div
-                key={player.id}
-                style={{
-                  ...styles.listItem,
-                  ...(selectedPlayerId === player.id ? styles.activeListItem : {}),
-                }}
-                onClick={() => setSelectedPlayerId(player.id)}
-              >
-                <div style={styles.listAvatar}>
+              <div key={player.id} style={styles.gridCard}>
+                <div style={styles.cardImageContainer}>
                   <img
-                    src={playerStats[player.id]?.image}
+                    src={playerStats[player.id]?.image || "https://via.placeholder.com/200"}
                     alt={player.name}
-                    style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%" }}
+                    style={styles.cardImage}
                   />
+                  <span style={styles.cardNumber}>#{player.number}</span>
                 </div>
-                <div style={styles.listInfo}>
-                  <span style={styles.listName}>{player.name.toUpperCase()}</span>
+                <div style={styles.cardContent}>
+                  <h3 style={styles.cardName}>{player.name}</h3>
+                  <p style={styles.cardPosition}>{player.position}</p>
+                  <button
+                    style={styles.cardButton}
+                    onClick={() => {
+                      setSelectedPlayerId(player.id);
+                      setViewMode("featured");
+                    }}
+                  >
+                    VIEW PROFILE
+                  </button>
                 </div>
-                {selectedPlayerId === player.id && <div style={styles.activeIndicator}></div>}
               </div>
             ))}
           </div>
         </div>
-      </div>
+      )}
     </section>
   );
 }
@@ -121,6 +181,7 @@ const styles = {
     minHeight: "80vh",
     display: "flex",
     alignItems: "center",
+    justifyContent: "center", // Centering for grid view too
   },
   container: {
     display: "grid",
@@ -144,8 +205,6 @@ const styles = {
   label: {
     fontSize: "24px",
     fontWeight: "800",
-    color: "#2a0a38", // Using a dark purple/blue from ref image or similar
-    // Actually, let's stick to arsenal:
     color: "var(--arsenal-dark)",
   },
   viewAll: {
@@ -153,13 +212,14 @@ const styles = {
     fontWeight: "600",
     color: "#666",
     cursor: "pointer",
+    textDecoration: "underline",
   },
   playerName: {
     fontSize: "48px",
     fontWeight: "800",
     lineHeight: "1",
     marginBottom: "10px",
-    color: "var(--arsenal-dark)", // Dark blue/purple in ref, using arsenal dark
+    color: "var(--arsenal-dark)",
     display: "flex",
     alignItems: "center",
     gap: "10px",
@@ -174,8 +234,8 @@ const styles = {
   },
   positionBadge: {
     display: "inline-block",
-    backgroundColor: "#e0dbe6", // Light purple bg
-    color: "#4b0082", // Dark purple text
+    backgroundColor: "#e0dbe6",
+    color: "#4b0082",
     padding: "5px 10px",
     borderRadius: "4px",
     fontSize: "12px",
@@ -234,21 +294,26 @@ const styles = {
     width: "450px",
     height: "450px",
     borderRadius: "50%",
-    border: "2px dashed #ccc", // Dotted circle
+    border: "2px dashed #ccc",
     zIndex: 0,
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
+  },
+  imageWrapper: {
+    position: "relative",
+    display: "flex",
+    justifyContent: "center",
   },
   playerImage: {
     zIndex: 1,
     height: "550px",
     objectFit: "contain",
     position: "relative",
-    bottom: "-20px", // Align slightly downwards
+    bottom: "-20px",
   },
   navButton: {
-    background: "#aa9cc2", // Light purple nav
+    background: "#aa9cc2",
     color: "#fff",
     border: "none",
     width: "40px",
@@ -270,6 +335,9 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     gap: "10px",
+    maxHeight: "600px",
+    overflowY: "auto",
+    paddingRight: "10px",
   },
   listItem: {
     display: "flex",
@@ -282,18 +350,18 @@ const styles = {
     position: "relative",
   },
   activeListItem: {
-    backgroundColor: "#fff", // Highlight logic? Ref image has a line pointer
+    backgroundColor: "#fff",
   },
   activeIndicator: {
     position: "absolute",
-    left: "-25px", // Pull it out to the line
+    left: "-25px",
     top: "50%",
     transform: "translateY(-50%)",
     width: "10px",
     height: "10px",
     backgroundColor: "var(--arsenal-gold)",
     borderRadius: "50%",
-    boxShadow: "0 0 0 4px #fff, 0 0 0 6px var(--arsenal-gold)", // Dot with ring
+    boxShadow: "0 0 0 4px #fff, 0 0 0 6px var(--arsenal-gold)",
   },
   listAvatar: {
     width: "50px",
@@ -311,4 +379,96 @@ const styles = {
     fontWeight: "700",
     color: "#333",
   },
+
+  // Grid View Styles
+  gridContainer: {
+    width: "100%",
+    maxWidth: "1400px",
+    display: "flex",
+    flexDirection: "column",
+    gap: "40px",
+  },
+  gridHeader: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  gridTitle: {
+    fontSize: "32px",
+    color: "var(--arsenal-dark)",
+  },
+  backButton: {
+    background: "transparent",
+    border: "2px solid var(--arsenal-dark)",
+    color: "var(--arsenal-dark)",
+    padding: "10px 20px",
+    fontWeight: "700",
+    cursor: "pointer",
+    textTransform: "uppercase",
+  },
+  gridView: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "30px",
+    justifyContent: "center",
+  },
+  gridCard: {
+    width: "250px",
+    backgroundColor: "#f9f9f9",
+    borderRadius: "8px",
+    overflow: "hidden",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
+    transition: "transform 0.3s",
+    cursor: "default",
+  },
+  cardImageContainer: {
+    width: "100%",
+    height: "250px",
+    backgroundColor: "#e0e0e0",
+    position: "relative",
+  },
+  cardImage: {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    objectPosition: "top",
+  },
+  cardNumber: {
+    position: "absolute",
+    top: "10px",
+    right: "10px",
+    background: "var(--arsenal-red)",
+    color: "#fff",
+    padding: "5px 8px",
+    fontSize: "12px",
+    fontWeight: "800",
+    borderRadius: "4px",
+  },
+  cardContent: {
+    padding: "20px",
+    textAlign: "center",
+  },
+  cardName: {
+    fontSize: "18px",
+    fontWeight: "700",
+    color: "var(--arsenal-dark)",
+    marginBottom: "5px",
+  },
+  cardPosition: {
+    fontSize: "12px",
+    color: "#666",
+    marginBottom: "15px",
+    textTransform: "uppercase",
+    letterSpacing: "1px",
+  },
+  cardButton: {
+    backgroundColor: "var(--arsenal-dark)",
+    color: "#fff",
+    border: "none",
+    padding: "10px 20px",
+    fontSize: "12px",
+    fontWeight: "600",
+    cursor: "pointer",
+    width: "100%",
+  }
 };
