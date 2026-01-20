@@ -1,15 +1,17 @@
 export default function Navbar() {
   return (
     <header style={styles.header}>
-      <div style={styles.logo}>ARSENAL FC</div>
+      <div style={styles.logoContainer}>
+        <img src="/arsenal.svg" alt="Arsenal Logo" style={styles.logoImage} />
+        <div style={styles.logo}>ARSENAL FC</div>
+      </div>
 
       <nav style={styles.nav}>
-        <a href="#home" className="nav-link">Home</a>
-        <a href="#squad" className="nav-link">Squad</a>
-        {/* Fixtures section isn't explicitly built yet, mapping to Home or keeping empty for now */}
-        <a href="https://www.arsenal.com/fixtures" className="nav-link">Fixtures</a>
-        <a href="#about" className="nav-link">About</a>
-        <a href="#contact" className="nav-link">Contact</a>
+        <a href="#home" className="nav-link">HOME</a>
+        <a href="#squad" className="nav-link">SQUAD</a>
+        <a href="https://www.arsenal.com/fixtures" className="nav-link">FIXTURES</a>
+        <a href="#about" className="nav-link">ABOUT</a>
+        <a href="#contact" className="nav-link">CONTACT</a>
       </nav>
     </header>
   );
@@ -27,15 +29,25 @@ const styles = {
     padding: "20px 60px",
   },
 
+  logoContainer: {
+    display: "flex",
+    alignItems: "center",
+    gap: "10px",
+  },
+  logoImage: {
+    height: "40px",
+    width: "auto",
+  },
   logo: {
     fontWeight: 800,
     fontSize: "20px",
     letterSpacing: "2px",
+    color: "#fff",
   },
 
   nav: {
     display: "flex",
     gap: "30px",
-    fontWeight: 500,
+    fontWeight: 600,
   },
 };

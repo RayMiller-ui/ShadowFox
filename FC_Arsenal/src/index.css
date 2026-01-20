@@ -64,8 +64,7 @@ section {
   color: var(--arsenal-white);
   text-decoration: none;
   font-family: var(--font-primary);
-  font-size: 1.2rem;
-  /* Adjusted for Bebas Neue size */
+  font-size: 1rem;
   letter-spacing: 2px;
   position: relative;
   transition: color 0.3s ease;

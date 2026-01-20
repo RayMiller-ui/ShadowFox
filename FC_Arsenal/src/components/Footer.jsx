@@ -80,6 +80,7 @@ export default function Footer() {
 
       <div style={styles.bottomBar}>
         <div style={styles.branding}>
+          <img src="/arsenal.svg" alt="Arsenal Logo" style={styles.logoImage} />
           <h3 style={styles.logo}>ARSENAL FC</h3>
           <p style={styles.copyright}>© {new Date().getFullYear()} The Arsenal Football Club PLC.</p>
         </div>
@@ -90,6 +91,29 @@ export default function Footer() {
           <a href="#" style={styles.legalLink}>Accessibility</a>
         </div>
       </div>
+
+      <div style={styles.subFooter}>
+        <p style={styles.designerText}>
+          Designed by <span style={styles.name}>BABLU KUMAR</span>
+        </p>
+        <p style={styles.madeWithLove}>
+          Made with Love
+        </p>
+        <div style={styles.socialLinks}>
+          <a href="https://github.com/bablu-kumar" target="_blank" rel="noopener noreferrer" style={styles.iconLink} aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+          </a>
+          <a href="https://linkedin.com/in/bablu-kumar" target="_blank" rel="noopener noreferrer" style={styles.iconLink} aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+        </div>
+      </div>
     </footer>
   );
 }
@@ -97,7 +121,7 @@ export default function Footer() {
 const styles = {
   footer: {
     backgroundColor: "#050505",
-    padding: "80px 40px 40px",
+    padding: "80px 40px 0", // Ensure no bottom padding so sub-footer hits the edge if needed
     color: "#fff",
     fontFamily: "'Montserrat', sans-serif",
     borderTop: "1px solid #222",
@@ -140,7 +164,7 @@ const styles = {
     flexWrap: "wrap",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingTop: "40px",
+    padding: "40px 0",
     borderTop: "1px solid #222",
     maxWidth: "1400px",
     margin: "0 auto",
@@ -150,6 +174,10 @@ const styles = {
     display: "flex",
     alignItems: "center",
     gap: "20px",
+  },
+  logoImage: {
+    height: "30px",
+    width: "auto",
   },
   logo: {
     fontSize: "20px",
@@ -169,4 +197,48 @@ const styles = {
     textDecoration: "none",
     margin: "0 10px",
   },
+  // Sub-Footer Styles
+  subFooter: {
+    backgroundColor: "#000",
+    borderTop: "1px solid #111",
+    padding: "20px 40px",
+    marginTop: "0",
+    marginLeft: "-40px",
+    marginRight: "-40px",
+    display: "flex",
+    justifyContent: "space-between", // Horizontal layout: Left & Right
+    alignItems: "center",
+  },
+  designerText: {
+    fontSize: "14px",
+    color: "#888",
+    margin: 0,
+    fontFamily: "var(--font-body)",
+    letterSpacing: "1px",
+    fontWeight: "500",
+  },
+  name: {
+    color: "#db0007",
+    fontWeight: "700",
+    textTransform: "uppercase",
+  },
+  madeWithLove: {
+    fontSize: "14px",
+    color: "#666",
+    margin: 0,
+    fontWeight: "500",
+    letterSpacing: "0.5px",
+  },
+  socialLinks: {
+    display: "flex",
+    gap: "15px",
+    alignItems: "center",
+  },
+  iconLink: {
+    color: "#fff",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    transition: "color 0.3s ease, transform 0.2s ease",
+  }
 };
