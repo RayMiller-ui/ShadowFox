@@ -4,11 +4,12 @@ export default function Navbar() {
       <div style={styles.logo}>ARSENAL FC</div>
 
       <nav style={styles.nav}>
-        <a href="#" className="nav-link">Home</a>
-        <a href="#" className="nav-link">Squad</a>
-        <a href="#" className="nav-link">Fixtures</a>
-        <a href="#" className="nav-link">About</a>
-        <a href="#" className="nav-link">Contact</a>
+        <a href="#home" className="nav-link">Home</a>
+        <a href="#squad" className="nav-link">Squad</a>
+        {/* Fixtures section isn't explicitly built yet, mapping to Home or keeping empty for now */}
+        <a href="https://www.arsenal.com/fixtures" className="nav-link">Fixtures</a>
+        <a href="#about" className="nav-link">About</a>
+        <a href="#contact" className="nav-link">Contact</a>
       </nav>
     </header>
   );

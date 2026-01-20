@@ -36,7 +36,7 @@ export default function LatestNews() {
                             <span style={styles.date}>{item.date}</span>
                             <h3 style={styles.title}>{item.title}</h3>
                             <p style={styles.summary}>{item.summary}</p>
-                            <button style={styles.link}>Read More &rarr;</button>
+                            <button onClick={() => window.location.href = "https://www.arsenal.com/news"} style={styles.link}>Read More &rarr;</button>
                         </div>
                     </div>
                 ))}

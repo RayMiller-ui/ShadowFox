@@ -62,15 +62,7 @@ export const playerStats = {
         bio: "A warrior at the back, Gabriel combines physical dominance with set-piece threat.",
         image: "https://resources.premierleague.com/premierleague/photos/players/250x250/p226597.png",
     },
-    8: {
-        // Aaron Ramsdale
-        matches: 10,
-        goals: 0,
-        assists: 0,
-        minutesPlayed: 900,
-        bio: "Known for his spectacular saves and passionate celebrations, Ramsdale remains a key part of the goalkeeping union.",
-        image: "https://resources.premierleague.com/premierleague/photos/players/250x250/p225325.png",
-    },
+
     9: {
         // Gabriel Martinelli
         matches: 35,
@@ -98,15 +90,7 @@ export const playerStats = {
         bio: "The definition of an impact player. Trossard can start or come off the bench to score crucial goals.",
         image: "https://resources.premierleague.com/premierleague/photos/players/250x250/p116216.png",
     },
-    12: {
-        // Thomas Partey
-        matches: 14,
-        goals: 0,
-        assists: 1,
-        minutesPlayed: 800,
-        bio: "When fit, Partey is elite at breaking lines and controlling the tempo from the base of midfield.",
-        image: "https://resources.premierleague.com/premierleague/photos/players/250x250/p163067.png",
-    },
+
     13: {
         // Jorginho
         matches: 20,
@@ -125,14 +109,15 @@ export const playerStats = {
         bio: "A defensive specialist who can play anywhere across the backline with equal proficiency.",
         image: "https://resources.premierleague.com/premierleague/photos/players/250x250/p223723.png",
     },
-    15: {
-        // Oleksandr Zinchenko
-        matches: 28,
-        goals: 1,
-        assists: 2,
-        minutesPlayed: 2100,
-        bio: "Technically superb, Zinchenko often inverts into midfield to help overload the opposition.",
-        image: "https://resources.premierleague.com/premierleague/photos/players/250x250/p206989.png",
+    18: {
+        // Riccardo Calafiori
+        matches: 30, // Mock stats
+        goals: 2,
+        assists: 5,
+        minutesPlayed: 2500,
+        bio: "A modern, versatile defender with exceptional ball-playing ability and composure, Calafiori is a rising star in European football.",
+        image: "https://img.uefa.com/imgml/TP/players/3/2024/cutoff/250113392.png",
+        // Placeholder or find a better one later
     },
     16: {
         // Eddie Nketiah

@@ -48,13 +48,7 @@ export const squad = [
     number: 6,
     nationality: "Brazil",
   },
-  {
-    id: 8,
-    name: "Aaron Ramsdale",
-    position: "Goalkeeper",
-    number: 1,
-    nationality: "England",
-  },
+
   {
     id: 9,
     name: "Gabriel Martinelli",
@@ -76,13 +70,7 @@ export const squad = [
     number: 19,
     nationality: "Belgium",
   },
-  {
-    id: 12,
-    name: "Thomas Partey",
-    position: "Midfielder",
-    number: 5,
-    nationality: "Ghana",
-  },
+
   {
     id: 13,
     name: "Jorginho",
@@ -98,11 +86,11 @@ export const squad = [
     nationality: "Japan",
   },
   {
-    id: 15,
-    name: "Oleksandr Zinchenko",
+    id: 18,
+    name: "Riccardo Calafiori",
     position: "Defender",
-    number: 35,
-    nationality: "Ukraine",
+    number: 33,
+    nationality: "Italy",
   },
   {
     id: 16,

@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section style={styles.hero}>
+    <section id="home" style={styles.hero}>
       <div style={styles.overlay}>
         <div style={styles.content}>
           <span style={styles.subtitle}>EST. 1886 • NORTH LONDON</span>
@@ -9,8 +9,8 @@ export default function Hero() {
             Experience the passion, the history, and the future of Arsenal Football Club.
           </p>
           <div style={styles.buttonGroup}>
-            <button style={styles.primaryButton}>MATCH TICKETS</button>
-            <button style={styles.secondaryButton}>VISIT THE STORE</button>
+            <button onClick={() => window.location.href='https://www.arsenal.com/tickets'} style={styles.primaryButton}>MATCH TICKETS</button>
+            <button onClick={() => window.location.href='https://arsenaldirect.arsenal.com/'} style={styles.secondaryButton}>VISIT THE STORE</button>
           </div>
         </div>
       </div>
@@ -21,7 +21,7 @@ export default function Hero() {
 const styles = {
   hero: {
     height: "95vh",
-    backgroundImage: "url('/emirates.png')",
+    backgroundImage: "url('https://cdn-imgix.headout.com/media/images/c47105d819907b5b89efece1e210bda2-3527-london-arsenal-fc-stadium-tours-01.jpg')",
     backgroundSize: "cover",
     backgroundPosition: "center",
     position: "relative",

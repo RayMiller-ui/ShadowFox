@@ -1,6 +1,6 @@
 export default function Newsletter() {
     return (
-        <section style={styles.section}>
+        <section id="contact" style={styles.section}>
             <div style={styles.container}>
                 <h2 style={styles.header}>JOIN THE GUNNERS</h2>
                 <p style={styles.subtext}>

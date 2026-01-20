@@ -23,7 +23,7 @@ export default function Squad() {
   };
 
   return (
-    <section style={styles.section}>
+    <section id="squad" style={styles.section}>
       {viewMode === "featured" ? (
         <div style={styles.container}>
           {/* Left Column: Player Details */}
