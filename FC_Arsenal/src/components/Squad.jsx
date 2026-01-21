@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { squad } from "../data/squad";
 import { playerStats } from "../data/stats";
+import "./Squad.css";
 
 export default function Squad() {
   const [selectedPlayerId, setSelectedPlayerId] = useState(squad[0].id);
@@ -25,10 +26,10 @@ export default function Squad() {
   return (
     <section id="squad" style={styles.section}>
       {viewMode === "featured" ? (
-        <div style={styles.container}>
+        <div className="squad-container">
           {/* Left Column: Player Details */}
-          <div style={styles.leftCol}>
-            <div style={styles.header}>
+          <div className="squad-left-col">
+            <div className="squad-header">
               <span style={styles.label}>PLAYERS</span>
               <span
                 style={styles.viewAll}
@@ -39,7 +40,7 @@ export default function Squad() {
             </div>
 
             <div style={styles.playerInfo}>
-              <h1 style={styles.playerName}>
+              <h1 className="squad-player-name">
                 {selectedPlayer.name.toUpperCase()}
                 <span style={styles.captainBadge}>C</span>
               </h1>
@@ -75,16 +76,16 @@ export default function Squad() {
           </div>
 
           {/* Center Column: Player Image */}
-          <div style={styles.centerCol}>
+          <div className="squad-center-col">
             <button onClick={handlePrev} style={styles.navButton}>
               ←
             </button>
             <div style={styles.imageWrapper}>
-              <div style={styles.circleBg}></div>
+              <div className="squad-circle-bg"></div>
               <img
                 src={stats?.image || "https://via.placeholder.com/400x600"}
                 alt={selectedPlayer.name}
-                style={styles.playerImage}
+                className="squad-player-image"
               />
             </div>
             <button onClick={handleNext} style={styles.navButton}>
@@ -93,7 +94,7 @@ export default function Squad() {
           </div>
 
           {/* Right Column: Player List */}
-          <div style={styles.rightCol}>
+          <div className="squad-right-col">
             <div style={styles.listContainer}>
               {squad.map((player) => (
                 <div
@@ -184,23 +185,13 @@ const styles = {
     justifyContent: "center", // Centering for grid view too
   },
   container: {
-    display: "grid",
-    gridTemplateColumns: "1.2fr 1.5fr 0.8fr",
-    gap: "20px",
-    width: "100%",
-    maxWidth: "1400px",
-    margin: "0 auto",
+    /* Moved to Squad.css */
   },
   leftCol: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
+    /* Moved to Squad.css */
   },
   header: {
-    display: "flex",
-    alignItems: "center",
-    gap: "20px",
-    marginBottom: "40px",
+    /* Moved to Squad.css */
   },
   label: {
     fontSize: "24px",
@@ -215,14 +206,7 @@ const styles = {
     textDecoration: "underline",
   },
   playerName: {
-    fontSize: "48px",
-    fontWeight: "800",
-    lineHeight: "1",
-    marginBottom: "10px",
-    color: "var(--arsenal-dark)",
-    display: "flex",
-    alignItems: "center",
-    gap: "10px",
+    /* Moved to Squad.css */
   },
   captainBadge: {
     backgroundColor: "var(--arsenal-gold)",
@@ -284,21 +268,10 @@ const styles = {
     transition: "background 0.3s",
   },
   centerCol: {
-    position: "relative",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    /* Moved to Squad.css */
   },
   circleBg: {
-    position: "absolute",
-    width: "450px",
-    height: "450px",
-    borderRadius: "50%",
-    border: "2px dashed #ccc",
-    zIndex: 0,
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
+    /* Moved to Squad.css */
   },
   imageWrapper: {
     position: "relative",
@@ -306,11 +279,7 @@ const styles = {
     justifyContent: "center",
   },
   playerImage: {
-    zIndex: 1,
-    height: "550px",
-    objectFit: "contain",
-    position: "relative",
-    bottom: "-20px",
+    /* Moved to Squad.css */
   },
   navButton: {
     background: "#aa9cc2",
@@ -325,11 +294,7 @@ const styles = {
     margin: "0 20px",
   },
   rightCol: {
-    borderLeft: "1px solid #eee",
-    paddingLeft: "20px",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
+    /* Moved to Squad.css */
   },
   listContainer: {
     display: "flex",

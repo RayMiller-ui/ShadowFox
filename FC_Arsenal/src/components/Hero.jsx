@@ -21,7 +21,7 @@ export default function Hero() {
 const styles = {
   hero: {
     height: "95vh",
-    backgroundImage: "url('https://cdn-imgix.headout.com/media/images/c47105d819907b5b89efece1e210bda2-3527-london-arsenal-fc-stadium-tours-01.jpg')",
+    backgroundImage: "./main-bg_11zon.jpg",
     backgroundSize: "cover",
     backgroundPosition: "center",
     position: "relative",
