@@ -1,45 +1,56 @@
 import { useState } from "react";
+import "./LatestNews.css";
 
 const allNews = [
-    { id: 1, 
-    category: "men", 
-    title: "Preview: Inter Milan v Arsenal", 
-    date: "Jan 20, 2026", 
-    summary: "We head to Milan looking to extend our superb 100% record and move a step closer to finishing top of the Champions League league phase table when we face Inter on Tuesday (8pm UK).", 
-    image: "https://www.arsenal.com/sites/default/files/styles/large_16x9/public/images/Arsenal_CL_Fixture_16x9_Home__gr4fsl63.png?h=d1ca7a6f&auto=webp&itok=16QQgvmL", 
-    link: "https://www.arsenal.com/news/preview-inter-milan-v-arsenal-0" },
+    {
+        id: 1,
+        category: "men",
+        title: "Preview: Inter Milan v Arsenal",
+        date: "Jan 20, 2026",
+        summary: "We head to Milan looking to extend our superb 100% record and move a step closer to finishing top of the Champions League league phase table when we face Inter on Tuesday (8pm UK).",
+        image: "https://www.arsenal.com/sites/default/files/styles/large_16x9/public/images/Arsenal_CL_Fixture_16x9_Home__gr4fsl63.png?h=d1ca7a6f&auto=webp&itok=16QQgvmL",
+        link: "https://www.arsenal.com/news/preview-inter-milan-v-arsenal-0"
+    },
 
-    { id: 2, 
-    category: "academy", 
-    title: "Hamill insists under-18s season far from over", 
-    date: "Jan 16, 2026", 
-    summary: "Callan Hamill believes the FA Youth Cup fourth round against Manchester City ended in a loss due to a lapse in game control during the opening 45 of the affair.", 
-    image: "https://www.arsenal.com/sites/default/files/styles/large_16x9/public/images/callan-u21-clap_ua25fr20.png?h=8b6ce4d6&auto=webp&itok=OT9goAEv", 
-    link: "https://www.arsenal.com/news/hamill-insists-under-18s-season-far-over" },
+    {
+        id: 2,
+        category: "academy",
+        title: "Hamill insists under-18s season far from over",
+        date: "Jan 16, 2026",
+        summary: "Callan Hamill believes the FA Youth Cup fourth round against Manchester City ended in a loss due to a lapse in game control during the opening 45 of the affair.",
+        image: "https://www.arsenal.com/sites/default/files/styles/large_16x9/public/images/callan-u21-clap_ua25fr20.png?h=8b6ce4d6&auto=webp&itok=OT9goAEv",
+        link: "https://www.arsenal.com/news/hamill-insists-under-18s-season-far-over"
+    },
 
-    { id: 3, 
-    category: "women", 
-    title: "Renée: “Every trophy is important”", 
-    date: "Jan 20, 2026", 
-    summary: "Wednesday’s Subway Women’s League Cup semi-final against Manchester United represents an opportunity to reach a record 11th League Cup final.", 
-    image: "https://www.arsenal.com/sites/default/files/styles/large_16x9/public/images/Renee-at-Crystal-Palace_rng3a6vf.jpg?h=a8f71d59&auto=webp&itok=u9ZlRbxU", 
-    link: "https://www.arsenal.com/news/renee-every-trophy-important" },
+    {
+        id: 3,
+        category: "women",
+        title: "Renée: “Every trophy is important”",
+        date: "Jan 20, 2026",
+        summary: "Wednesday’s Subway Women’s League Cup semi-final against Manchester United represents an opportunity to reach a record 11th League Cup final.",
+        image: "https://www.arsenal.com/sites/default/files/styles/large_16x9/public/images/Renee-at-Crystal-Palace_rng3a6vf.jpg?h=a8f71d59&auto=webp&itok=u9ZlRbxU",
+        link: "https://www.arsenal.com/news/renee-every-trophy-important"
+    },
 
-    { id: 4, 
-    category: "men", 
-    title: "Team news: Seven changes made for San Siro visit", 
-    date: "Jan 20, 2026", 
-    summary: "Mikel Arteta has shuffled his pack for tonight’s Champions League game against Inter Milan, making seven changes and handing starts to Bukayo Saka, Cristian Mosquera and Ebere Eze.", 
-    image: "https://www.arsenal.com/sites/default/files/styles/large_16x9/public/images/mosquera-saka_ger5ik4e.jpg?h=bef40d07&auto=webp&itok=38n3ClKd", 
-    link: "https://www.arsenal.com/news/team-news-seven-changes-made-san-siro-visit" },
+    {
+        id: 4,
+        category: "men",
+        title: "Team news: Seven changes made for San Siro visit",
+        date: "Jan 20, 2026",
+        summary: "Mikel Arteta has shuffled his pack for tonight’s Champions League game against Inter Milan, making seven changes and handing starts to Bukayo Saka, Cristian Mosquera and Ebere Eze.",
+        image: "https://www.arsenal.com/sites/default/files/styles/large_16x9/public/images/mosquera-saka_ger5ik4e.jpg?h=bef40d07&auto=webp&itok=38n3ClKd",
+        link: "https://www.arsenal.com/news/team-news-seven-changes-made-san-siro-visit"
+    },
 
-    { id: 5,
-    category: "women", 
-    title: "The best stats from Kim Little’s time at Arsenal", 
-    date: "Jan 15, 2026", 
-    summary: "With her goal in our 2-0 Women’s FA Cup win over Aston Villa on Sunday, Kim Little made it 15 different seasons she’s scored in across all competitions for us.", 
-    image: "https://www.arsenal.com/sites/default/files/styles/large_16x9/public/images/Kim-Little-celebrates_mym0yp1v.jpg?h=f65ac6eb&auto=webp&itok=ahHymcqa", 
-    link: "https://www.arsenal.com/news/best-stats-kim-littles-time-arsenal" },
+    {
+        id: 5,
+        category: "women",
+        title: "The best stats from Kim Little’s time at Arsenal",
+        date: "Jan 15, 2026",
+        summary: "With her goal in our 2-0 Women’s FA Cup win over Aston Villa on Sunday, Kim Little made it 15 different seasons she’s scored in across all competitions for us.",
+        image: "https://www.arsenal.com/sites/default/files/styles/large_16x9/public/images/Kim-Little-celebrates_mym0yp1v.jpg?h=f65ac6eb&auto=webp&itok=ahHymcqa",
+        link: "https://www.arsenal.com/news/best-stats-kim-littles-time-arsenal"
+    },
 
     { id: 6, category: "academy", title: "U18s through to Youth Cup semi", date: "Jan 12, 2026", summary: "Young Gunners shine under lights.", image: "https://www.arsenal.com/sites/default/files/styles/large_16x9/public/gun__1648037385_FA_Youth_Cup_generic.jpg?itok=8aJ_K4_J", link: "https://www.arsenal.com/academy/news/u18s-youth-cup-semi" },
     { id: 7, category: "men", title: "Rice voted POTM", date: "Jan 10, 2026", summary: "Midfield dynamo takes award.", image: "https://i2-prod.mirror.co.uk/incoming/article30907000.ece/ALTERNATES/s1200c/0_Declan-Rice-Arsenal.jpg", link: "https://www.arsenal.com/men/news/rice-potm-january" },
@@ -64,7 +75,7 @@ export default function LatestNews() {
         <section style={styles.section}>
             <div style={styles.headerRow}>
                 <h2 style={styles.header}>LATEST NEWS</h2>
-                <div style={styles.tabs}>
+                <div className="news-filter-tabs">
                     {['all', 'men', 'women', 'academy'].map(tab => (
                         <button
                             key={tab}

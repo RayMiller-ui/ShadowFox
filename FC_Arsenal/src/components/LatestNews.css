@@ -1,0 +1,13 @@
+/* LatestNews.css */
+
+.news-filter-tabs {
+    display: flex;
+    gap: 10px;
+}
+
+/* Hide filter buttons on mobile devices */
+@media (max-width: 768px) {
+    .news-filter-tabs {
+        display: none;
+    }
+}
