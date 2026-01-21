@@ -106,10 +106,14 @@ export default function Squad() {
 
           {/* Center Column: Player Image */}
           <div className="squad-center-col">
-            <button onClick={handlePrev} style={styles.navButton}>
+            <button onClick={handlePrev} style={styles.navButton} className="squad-nav-button">
               ←
             </button>
-            <div style={styles.imageWrapper}>
+            <div
+              style={styles.imageWrapper}
+              className="squad-image-wrapper"
+              onClick={handleNext}
+            >
               <div className="squad-circle-bg"></div>
               <img
                 src={stats?.image || "https://via.placeholder.com/400x600"}
@@ -117,7 +121,7 @@ export default function Squad() {
                 className="squad-player-image"
               />
             </div>
-            <button onClick={handleNext} style={styles.navButton}>
+            <button onClick={handleNext} style={styles.navButton} className="squad-nav-button">
               →
             </button>
           </div>

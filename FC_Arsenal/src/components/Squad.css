@@ -116,4 +116,14 @@
     .squad-player-image {
         height: 320px;
     }
+
+    /* Hide navigation arrow buttons on mobile */
+    .squad-nav-button {
+        display: none !important;
+    }
+
+    /* Make image wrapper interactive for touch */
+    .squad-image-wrapper {
+        cursor: pointer;
+    }
 }
