@@ -1,0 +1,56 @@
+/* Navbar.css */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--arsenal-red);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+}
+
+.nav-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo-image {
+    height: 40px;
+    width: auto;
+}
+
+.nav-logo-text {
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    font-weight: 600;
+}
+
+/* Base style for all links is handled by .nav-link in index.css likely, 
+   but we can reinforce or just rely on global if it's there. 
+   Checking previous file, .nav-link was in index.css. 
+   We just need to manage visibility here. */
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-logo-text {
+        font-size: 16px;
+    }
+
+    /* Hide additional links on mobile */
+    .nav-link-optional {
+        display: none;
+    }
+}

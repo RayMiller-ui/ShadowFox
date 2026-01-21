@@ -11,6 +11,26 @@ export default function Squad() {
   const selectedPlayer = squad.find((p) => p.id === selectedPlayerId);
   const stats = playerStats[selectedPlayerId];
 
+  // Helper function to generate player profile URL
+  const getPlayerProfileUrl = (playerName) => {
+    const slug = playerName
+      .toLowerCase()
+      .replace(/[áàâãä]/g, 'a')
+      .replace(/[éèêë]/g, 'e')
+      .replace(/[íìîï]/g, 'i')
+      .replace(/[óòôõö]/g, 'o')
+      .replace(/[úùûü]/g, 'u')
+      .replace(/ñ/g, 'n')
+      .replace(/ç/g, 'c')
+      .replace(/ø/g, 'o')
+      .replace(/å/g, 'a')
+      .replace(/æ/g, 'ae')
+      .replace(/[^a-z0-9\s-]/g, '')
+      .trim()
+      .replace(/\s+/g, '-');
+    return `https://www.arsenal.com/men/players/${slug}`;
+  };
+
   const handleNext = () => {
     const currentIndex = squad.findIndex((p) => p.id === selectedPlayerId);
     const nextIndex = (currentIndex + 1) % squad.length;
@@ -42,7 +62,9 @@ export default function Squad() {
             <div style={styles.playerInfo}>
               <h1 className="squad-player-name">
                 {selectedPlayer.name.toUpperCase()}
-                <span style={styles.captainBadge}>C</span>
+                {selectedPlayer.isCaptain && (
+                  <span style={styles.captainBadge}>C</span>
+                )}
               </h1>
               <span style={styles.positionBadge}>
                 {selectedPlayer.position.toUpperCase()}
@@ -71,7 +93,14 @@ export default function Squad() {
 
               <p style={styles.bio}>{stats?.bio || "No biography available."}</p>
 
-              <button style={styles.ctaButton}>VIEW PROFILE</button>
+              <a
+                href={getPlayerProfileUrl(selectedPlayer.name)}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={styles.ctaButton}
+              >
+                VIEW PROFILE
+              </a>
             </div>
           </div>
 
@@ -266,6 +295,8 @@ const styles = {
     fontSize: "14px",
     cursor: "pointer",
     transition: "background 0.3s",
+    textDecoration: "none",
+    display: "inline-block",
   },
   centerCol: {
     /* Moved to Squad.css */

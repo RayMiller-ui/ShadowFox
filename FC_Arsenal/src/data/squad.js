@@ -12,6 +12,7 @@ export const squad = [
     position: "Midfielder",
     number: 8,
     nationality: "Norway",
+    isCaptain: true,
   },
   {
     id: 3,

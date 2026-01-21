@@ -21,7 +21,7 @@ export default function Hero() {
 const styles = {
   hero: {
     height: "95vh",
-    backgroundImage: "./main-bg_11zon.jpg",
+    backgroundImage: "url('./main-bg_11zon.jpg')",
     backgroundSize: "cover",
     backgroundPosition: "center",
     position: "relative",
